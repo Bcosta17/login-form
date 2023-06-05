@@ -1,0 +1,266 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: var(--text-base);
+  text-decoration: none;
+  font-size: 1.4rem;
+  overflow: hidden;
+} 
+
+a {
+  cursor: pointer;
+}
+
+:root {
+  font-size: 62.5%;
+  --text-base: #afb6c2;
+  --text-title: #d4ccb6;
+  --background: #191816;
+  --form-background: #24221f;
+  --primary-color: #ffc632;
+}
+
+body {
+  background-color: var(--background);
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.col-left {
+  padding: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.col-left header {
+  position: absolute;
+  top: 4%;
+  left: 4%;
+}
+
+.col-left main {
+  background-color: var(--form-background);
+  width: 57.2rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: .4rem;
+  padding: 6rem 10%;
+}
+
+.col-left main h1 {
+  font-size: 2.4rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+}
+
+.col-left main h1 img {
+  margin-right: 1rem;
+}
+
+.col-left main h2 {
+  font-size: 1.6rem;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  margin-bottom: 2.7rem;
+}
+
+main form .form-element {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.6rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  padding: .3rem;
+  margin-top: 1.5rem;
+}
+
+.form-element input {
+  
+  height: 4.4rem;
+  border-radius: .4rem;
+  background-color: transparent;
+  border: solid 1px var(--text-base);
+  margin-top: 2rem;
+  padding: 0 3.2rem;
+  margin-top: .5rem;
+}
+
+.icon {
+  position: absolute;
+  top: 3.9rem;
+  left: 1.2rem;
+  width: 2rem;
+}
+
+.icon-mail {
+  background-image: url('./assets/mail.svg');
+  width: 2rem;
+  height: 2rem;
+}
+
+.form-element input:focus {
+  outline: solid .2rem var(--primary-color);
+  border: var(--primary-color);
+}
+
+input[type="text"]:focus + .icon-mail {
+  background-image: url('./assets/mail-focus.svg');
+}
+
+.icon-lock {
+  background-image: url('./assets/lock.svg');
+  width: 2rem;
+  height: 2rem;
+}
+
+input[type="password"]:focus + .icon-lock {
+  background-image: url('./assets/lock-focus.svg');
+}
+
+.icon-eye{
+  background-image: url('./assets/eye.svg');
+  width: 2rem;
+  height: 2rem;
+  left: 40rem;
+ 
+}
+
+input[type="password"]:focus ~ .icon-eye { 
+  background-image: url('./assets/eye-focus.svg');
+}
+
+.check-forgout{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 .4rem;
+  margin: 1rem 0;
+}
+
+.check {
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+  
+}
+
+.check-forgout a, .register p, .register a {
+  color: var(--primary-color);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  width: 2rem;
+  height: 2rem;
+  background-color:transparent;
+  border: 1px solid var(--text-base);
+  border-radius: 4px;
+  position: relative;
+}
+
+input[type="checkbox"]:checked {
+  background-color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  border-radius: 4px;
+}
+
+input[type="checkbox"]:checked::after {
+  content: "";
+  background-image: url('./assets/check.svg');
+  background-size: 100% 100%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 16px;
+  height: 16px;
+}
+
+.register {
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  width: 100%;
+  height: 5.1rem;
+  border-radius: .4rem;
+  border: none;
+  background-color: var(--primary-color);
+  color: #473404;
+
+  font-size: 1.8rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  margin: 1.4rem 0;
+  cursor: pointer;
+}
+
+.register p {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  margin-right:.4rem ;
+}
+
+
+.col-right img {
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 1024px) {
+  .icon-eye{
+    left: 31rem;
+  }
+}
+
+@media (max-width: 769px) {
+  .col-left {
+    
+    padding: 0 2rem;
+   
+    align-items: flex-start;
+    padding-top: 9rem; 
+  }
+  .col-left main {
+    background-color: transparent;
+    padding: 0;
+  }
+
+
+}
+
+/* Estilos adicionais para tornar o layout responsivo */
+@media (max-width: 426px) {
+  body {
+    border: solid;
+    grid-template-columns: 100%;
+  }
+
+  .icon-eye{
+    left: 34rem;
+  }
+
+  .col-right {
+    display: none;
+  }
+}
+
+@media (max-width: 376px) {
+  .icon-eye{
+    left: 29rem;
+  }
+}
+
+
+@media (max-width: 320px) {
+  .icon-eye{
+    left: 24rem;
+  }
+}
